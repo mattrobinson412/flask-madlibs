@@ -19,7 +19,7 @@ def home_form():
 
     return render_template('home.html', prompts=prompts)
 
-@app.route('/story')
+@app.route('/story', methods=['POST'])
 def show_story():
     """Shows story after words are entered into Madlib form."""
     text = story.generate(request.args)
